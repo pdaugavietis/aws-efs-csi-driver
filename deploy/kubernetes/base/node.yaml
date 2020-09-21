@@ -17,6 +17,10 @@ spec:
       nodeSelector:
         kubernetes.io/os: linux
       hostNetwork: true
+      dnsPolicy: "ClusterFirstWithHostNet"
+      dnsConfig:
+        nameservers:
+          - 169.254.169.253
       priorityClassName: system-node-critical
       tolerations:
         - operator: Exists
